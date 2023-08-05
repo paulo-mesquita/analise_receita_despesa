@@ -7,7 +7,7 @@ Este projeto tem como objetivo analisar dados de beneficiários ativos para pess
 1. Certifique-se de ter o Python instalado em seu sistema.
 
 2. Clone este repositório para o seu computador:
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/paulo-mesquita/analise_receita_despesa.git
 
 3. Coloque o arquivo `analitixa-pf.xlsx` na pasta do repositório.
 
