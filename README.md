@@ -1,51 +1,33 @@
-# Análise de Dados PF e PJ (Número de Beneficiarios, Receita e Despesas)
+# Análise de Dados - Planilhas PF e PJ
 
-Este projeto tem como objetivo analisar dados de beneficiários ativos para pessoas físicas (PF) e pessoas jurídicas (PJ) a partir de um conjunto de arquivos Excel mensais. O script Python processa os dados e cria uma planilha consolidada com informações sobre o número de beneficiários ativos, valor da receita e valor das despesas para cada mês e cada categoria (PF e PJ).
+## Descrição do Projeto
 
-## Como usar
+Este projeto em Python realiza a análise de dados de uma planilha contendo informações de beneficiários ativos de uma empresa. O código lê os dados da planilha, filtra as informações relevantes para Pessoas Físicas (PF) e Pessoas Jurídicas (PJ), e gera um relatório analítico com informações detalhadas para cada região em uma única planilha.
 
-1. Certifique-se de ter o Python instalado em seu sistema.
+## Como Usar
 
-2. Clone este repositório para o seu computador:
-git clone https://github.com/paulo-mesquita/analise_receita_despesa.git
+1. Clone o repositório em sua máquina local:
+git clone https://github.com/paulo-mesquita/analise_receita_despesa_em_python
 
-3. Coloque o arquivo `analitixa-pf.xlsx` na pasta do repositório.
+2. Instale as dependências necessárias:
+pip install pandas
 
-4. Abra um terminal ou prompt de comando e navegue até o diretório do repositório.
+3. Certifique-se de que a planilha `analitica.xlsx` esteja na mesma pasta do código.
 
-5. Execute o script com o comando:
-python script_analise_dados.py
+4. Execute o código Python:
+python nalitica-receita-despesa.ipynb
 
-6. A planilha consolidada será criada no arquivo `planilhas_analise_pf_pj.xlsx`.
+5. Após a execução, uma nova planilha chamada `planilhas_resultado_analise_pf_pj.xlsx` será criada na mesma pasta do código, contendo as abas `PF` e `PJ` com os dados analisados.
 
-## Trecho do Código
+## Melhorias Implementadas
 
-```python
-import pandas as pd
+- O código agora realiza a análise de dados para PF e PJ considerando as diferentes regiões presentes na planilha.
+- As informações de cada região são mostradas com espaço de duas linhas de distância para melhor visualização.
 
-def analisar_dados(df, pessoa):
- # Filtrar apenas os dados da pessoa (PF ou PJ)
- df_pessoa = df[df['PESSOA'] == pessoa]
+## Contribuição
 
- # Número de beneficiários ativos
- num_beneficiarios_ativos = df_pessoa[df_pessoa['SITUACAO'] == 'Ativo']['MATRICULA'].nunique()
+Contribuições são bem-vindas! Sinta-se à vontade para abrir um Pull Request com sugestões de melhorias ou correções de bugs.
 
- # Valor da receita
- valor_receita = df_pessoa[df_pessoa['SITUACAO'] == 'Ativo']['Mensalidade'].sum()
+## Licença
 
- # Valor das despesas
- valor_despesas = df_pessoa[df_pessoa['SITUACAO'] == 'Ativo']['Despesas'].sum()
-
- return num_beneficiarios_ativos, valor_receita, valor_despesas
-
-Este trecho do código é responsável por analisar os dados filtrando apenas as informações relevantes para cada pessoa (PF ou PJ) e calculando o número de beneficiários ativos, valor da receita e valor das despesas.
-
-Requisitos
-Python 3.x
-Pandas
-Licença
-Este projeto é licenciado sob a licença MIT - consulte o arquivo LICENSE para obter mais detalhes.
-
-Lembre-se de substituir `seu-usuario` e `nome-do-repositorio` com suas informações corretas. Esse README.md foca na explicação do projeto e inclui um trecho do código para ilustrar a funcionalidade. Espero que isso seja útil para o seu portfólio no seu currículo!
-
-
+Este projeto está licenciado sob a licença [MIT](https://opensource.org/licenses/MIT).
